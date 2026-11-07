@@ -739,72 +739,72 @@ if (backToTop) {
    18. RSVP FORM
 ========================================================= */
 
-function handleRSVP(event) {
+// function handleRSVP(event) {
 
-    event.preventDefault();
+//     event.preventDefault();
 
-    if (!rsvpForm) {
-        return;
-    }
+//     if (!rsvpForm) {
+//         return;
+//     }
 
-    const guestName = getElement("guestName").value.trim();
+//     const guestName = getElement("guestName").value.trim();
 
-    const guestCount = getElement("guestCount").value;
+//     const guestCount = getElement("guestCount").value;
 
-    const attendance = getElement("attendance").value;
+//     const attendance = getElement("attendance").value;
 
-    const guestMessage = getElement("guestMessage").value.trim();
+//     const guestMessage = getElement("guestMessage").value.trim();
 
-    if (!guestName || !guestCount || !attendance) {
+//     if (!guestName || !guestCount || !attendance) {
 
-        if (rsvpStatus) {
-            rsvpStatus.textContent =
-                "Please complete all required fields.";
-        }
+//         if (rsvpStatus) {
+//             rsvpStatus.textContent =
+//                 "Please complete all required fields.";
+//         }
 
-        return;
-    }
+//         return;
+//     }
 
-    const message = [
-        "Wedding RSVP - Ahmed & Liba",
-        "",
-        `Name: ${guestName}`,
-        `Guests: ${guestCount}`,
-        `Attendance: ${attendance}`,
-        `Message: ${guestMessage || "No additional message"}`
-    ].join("\n");
+//     const message = [
+//         "Wedding RSVP - Ahmed & Liba",
+//         "",
+//         `Name: ${guestName}`,
+//         `Guests: ${guestCount}`,
+//         `Attendance: ${attendance}`,
+//         `Message: ${guestMessage || "No additional message"}`
+//     ].join("\n");
 
-    const whatsappURL =
-        `https://wa.me/${SETTINGS.whatsappNumber}?text=${encodeURIComponent(message)}`;
+//     const whatsappURL =
+//         `https://wa.me/${SETTINGS.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-    if (rsvpStatus) {
+//     if (rsvpStatus) {
 
-        rsvpStatus.textContent =
-            "Opening WhatsApp to send your RSVP...";
+//         rsvpStatus.textContent =
+//             "Opening WhatsApp to send your RSVP...";
 
-    }
+//     }
 
-    window.open(
-        whatsappURL,
-        "_blank",
-        "noopener,noreferrer"
-    );
+//     window.open(
+//         whatsappURL,
+//         "_blank",
+//         "noopener,noreferrer"
+//     );
 
-}
+// }
 
 
 /* =========================================================
    19. RSVP EVENT
 ========================================================= */
 
-if (rsvpForm) {
+// if (rsvpForm) {
 
-    rsvpForm.addEventListener(
-        "submit",
-        handleRSVP
-    );
+//     rsvpForm.addEventListener(
+//         "submit",
+//         handleRSVP
+//     );
 
-}
+// }
 
 
 /* =========================================================
@@ -1149,6 +1149,68 @@ window.addEventListener(
     }
 );
 
+/* =========================================================
+   RSVP POPUP + FORM - NO WHATSAPP, ONLY CLOSE
+========================================================= */
+
+const rsvpModal = document.getElementById('rsvpModal');
+const openRsvpBtn = document.getElementById('openRsvpBtn');
+const closeRsvpBtn = document.getElementById('closeRsvpBtn');
+// const rsvpForm = document.getElementById('rsvpForm');
+// const rsvpStatus = document.getElementById('rsvpStatus');
+
+// Popup kholo
+if(openRsvpBtn && rsvpModal){
+    openRsvpBtn.addEventListener('click', () => {
+        rsvpModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+// Popup band karo
+function closeRsvp(){
+    if(!rsvpModal) return;
+    rsvpModal.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+if(closeRsvpBtn){
+    closeRsvpBtn.addEventListener('click', closeRsvp);
+}
+
+// Bahar click kare to band
+if(rsvpModal){
+    rsvpModal.addEventListener('click', (e) => {
+        if(e.target === rsvpModal) closeRsvp();
+    });
+}
+
+// FORM SUBMIT - WhatsApp NAHI, sirf CLOSE
+if(rsvpForm){
+    rsvpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const guestName = document.getElementById('guestName').value.trim();
+        const guestCount = document.getElementById('guestCount').value;
+        const attendance = document.getElementById('attendance').value;
+
+        if(!guestName || !guestCount || !attendance){
+            if(rsvpStatus) rsvpStatus.textContent = "Please complete all required fields.";
+            return;
+        }
+
+        if(rsvpStatus){
+            rsvpStatus.textContent = "Thank you " + guestName + "! Your RSVP has been received ♥";
+        }
+
+        // 1.5 second baad form band ho jayega
+        setTimeout(() => {
+            rsvpForm.reset();
+            if(rsvpStatus) rsvpStatus.textContent = "";
+            closeRsvp();
+        }, 1500);
+    });
+}
 
 /* =========================================================
    END OF WEDDING INVITATION JAVASCRIPT

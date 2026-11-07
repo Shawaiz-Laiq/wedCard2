@@ -2819,3 +2819,174 @@ section {
 #introScreen.splash .splash-seam-glow {
     z-index: 1;
 }
+
+
+/* =========================================================
+   RSVP BUTTON + POPUP - MAROON ROYAL THEME
+========================================================= */
+
+/* RSVP NOW Button */
+.rsvp-open-btn{
+    margin-top: 25px;
+    padding: 16px 42px !important;
+    font-size: 12px !important;
+    letter-spacing: 3px !important;
+    border-radius: 50px !important;
+    background: linear-gradient(135deg, #e9cd8a, #b68a46) !important;
+    color: #3a0a18 !important;
+    box-shadow: 0 0 25px rgba(216,180,106,.45);
+    cursor: pointer;
+}
+
+/* Popup Background */
+.rsvp-modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 3, 8, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+.rsvp-modal.open{
+    display: flex;
+}
+
+/* Popup Box - MAROON */
+.rsvp-modal-box{
+    width: 100%;
+    max-width: 430px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 22px;
+    padding: 38px 28px 30px;
+    text-align: center;
+    /* Maroon Royal Gradient */
+    background: linear-gradient(160deg, #4a1020 0%, #2a0813 55%, #1a050d 100%);
+    border: 1px solid rgba(216,180,106,.7);
+    outline: 1px solid rgba(216,180,106,.25);
+    outline-offset: 7px;
+    box-shadow: 0 25px 70px rgba(0,0,0,.6), 0 0 40px rgba(216,180,106,.15);
+    animation: rsvpPop .4s ease;
+}
+@keyframes rsvpPop{
+    from{ transform: scale(.85) translateY(15px); opacity: 0; }
+    to{ transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.rsvp-modal-box h2{
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff8e9;
+    margin: 0;
+}
+.rsvp-modal-sub{
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #d8b46a;
+    margin: 10px 0 8px;
+}
+.rsvp-modal-divider{
+    color: #d8b46a;
+    font-size: 14px;
+    letter-spacing: 12px;
+    margin: 10px 0 22px;
+}
+
+/* Close Button */
+.rsvp-close{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #d8b46a;
+    color: #3a0a18;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Form */
+.rsvp-form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    margin-top: 5px;
+}
+.rsvp-form .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+}
+.rsvp-form label{
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #f8e4a9;
+    text-transform: uppercase;
+}
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(216,180,106,.35);
+    background: rgba(255,255,255,.07);
+    color: #fff8e9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: .3s;
+}
+.rsvp-form input:focus,
+.rsvp-form select:focus,
+.rsvp-form textarea:focus{
+    border-color: #d8b46a;
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 0 15px rgba(216,180,106,.25);
+}
+.rsvp-form input::placeholder,
+.rsvp-form textarea::placeholder{
+    color: rgba(255,248,233,.4);
+}
+.rsvp-form select option{
+    background: #2a0813;
+    color: #fff;
+}
+.rsvp-form textarea{
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* Send Button */
+.rsvp-submit{
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 50px !important;
+    padding: 16px !important;
+    font-size: 12px !important;
+    letter-spacing: 3px !important;
+    cursor: pointer;
+    border: none;
+}
+.rsvp-status{
+    min-height: 20px;
+    text-align: center;
+    color: #f8e4a9;
+    font-size: 13px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
