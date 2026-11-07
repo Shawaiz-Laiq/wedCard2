@@ -978,7 +978,7 @@ section {
 
 .hero-bottom-decoration {
     position: absolute;
-    bottom: 35px;
+   
     left: 50%;
     z-index: 2;
     display: flex;
@@ -2321,6 +2321,33 @@ section {
         transform: none;
     }
 
+}
+
+/* Custom Thin Maroon Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #800020 transparent;
+}
+
+/* =========================================================
+   31. Chrome, Edge, Safari 
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #800020;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a00030;
 }
 
 

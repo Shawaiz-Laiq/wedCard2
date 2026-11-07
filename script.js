@@ -1186,32 +1186,115 @@ if(rsvpModal){
 }
 
 // FORM SUBMIT - WhatsApp NAHI, sirf CLOSE
-if(rsvpForm){
-    rsvpForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+// if(rsvpForm){
+//     rsvpForm.addEventListener('submit', (e) => {
+//         e.preventDefault();
 
-        const guestName = document.getElementById('guestName').value.trim();
-        const guestCount = document.getElementById('guestCount').value;
-        const attendance = document.getElementById('attendance').value;
+//         const guestName = document.getElementById('guestName').value.trim();
+//         const guestCount = document.getElementById('guestCount').value;
+//         const attendance = document.getElementById('attendance').value;
 
-        if(!guestName || !guestCount || !attendance){
-            if(rsvpStatus) rsvpStatus.textContent = "Please complete all required fields.";
-            return;
-        }
+//         if(!guestName || !guestCount || !attendance){
+//             if(rsvpStatus) rsvpStatus.textContent = "Please complete all required fields.";
+//             return;
+//         }
 
-        if(rsvpStatus){
-            rsvpStatus.textContent = "Thank you " + guestName + "! Your RSVP has been received ♥";
-        }
+//         if(rsvpStatus){
+//             rsvpStatus.textContent = "Thank you " + guestName + "! Your RSVP has been received ♥";
+//         }
 
-        // 1.5 second baad form band ho jayega
-        setTimeout(() => {
-            rsvpForm.reset();
-            if(rsvpStatus) rsvpStatus.textContent = "";
-            closeRsvp();
-        }, 1500);
-    });
-}
+//         // 1.5 second baad form band ho jayega
+//         setTimeout(() => {
+//             rsvpForm.reset();
+//             if(rsvpStatus) rsvpStatus.textContent = "";
+//             closeRsvp();
+//         }, 1500);
+//     });
+// }
 
 /* =========================================================
    END OF WEDDING INVITATION JAVASCRIPT
 ========================================================= */
+
+
+
+// =================================
+// RSVP FORM BACKEND CONNECTION
+// =================================
+
+// const rsvpForm = document.getElementById("rsvpForm");
+// const rsvpStatus = document.getElementById("rsvpStatus");
+
+if (rsvpForm) {
+
+    rsvpForm.addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const submitButton = rsvpForm.querySelector(".rsvp-submit");
+
+        const formData = {
+            guestName: document.getElementById("guestName").value.trim(),
+            guestCount: document.getElementById("guestCount").value,
+            guestNumber: document.getElementById("guestNumber").value,
+            attendance: document.getElementById("attendance").value,
+            guestMessage: document.getElementById("guestMessage").value.trim()
+        };
+
+        try {
+
+            submitButton.disabled = true;
+            submitButton.textContent = "SENDING...";
+
+            rsvpStatus.textContent = "Submitting your RSVP...";
+            rsvpStatus.style.color = "#b18b45";
+
+            const response = await fetch(
+                "https://admin2wedding.vercel.app/api/rsvp",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || "Unable to submit RSVP");
+            }
+
+            // Success
+           // Success
+rsvpStatus.textContent =
+    "Thank you! Your RSVP has been submitted successfully.";
+
+rsvpStatus.style.color = "green";
+
+setTimeout(() => {
+    rsvpForm.reset();
+    rsvpStatus.textContent = "";
+    closeRsvp();
+}, 2000);
+
+        } catch (error) {
+
+            console.error("RSVP Error:", error);
+
+            rsvpStatus.textContent =
+                error.message || "Something went wrong. Please try again.";
+
+            rsvpStatus.style.color = "red";
+
+        } finally {
+
+            submitButton.disabled = false;
+            submitButton.textContent = "SEND RSVP";
+
+        }
+
+    });
+
+}
