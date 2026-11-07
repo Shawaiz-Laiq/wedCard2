@@ -2073,6 +2073,8 @@ section {
 
     .couple-heart {
         margin: -15px 0;
+        display: flex;
+        justify-content: center;
     }
 
     .couple-image-wrap {
