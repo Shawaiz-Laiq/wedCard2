@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#160d18">
+
+    <meta
+        name="description"
+        content="A beautiful wedding invitation celebrating Ali and Hoorain."
+    >
+
+    <title>Ali Weds Hoorain | Wedding Invitation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- OPENING SCREEN -->
+    <!-- ========================================= -->
+
+    <section id="introScreen" class="intro-screen splash">
+
+        <div class="intro-background"></div>
+
+        <div class="intro-overlay"></div>
+
+        <div class="intro-glow intro-glow-one"></div>
+        <div class="intro-glow intro-glow-two"></div>
+        <div class="intro-glow intro-glow-three"></div>
+
+        <!-- Shown only while the curtain is opening -->
+        <div class="intro-content">
+
+            <p class="intro-bismillah">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </p>
+
+            <div class="intro-small-line"></div>
+
+            <p class="intro-invitation-label">
+                YOU ARE CORDIALLY INVITED
+            </p>
+
+            <h1 class="intro-groom-name">
+                Ali
+            </h1>
+
+            <div class="intro-weds">
+                <span></span>
+                <p>Weds</p>
+                <span></span>
+            </div>
+
+            <h1 class="intro-bride-name">
+                Hoorain
+            </h1>
+
+            <p class="intro-date">
+                01 JANUARY 2027
+            </p>
+
+            <div class="intro-decoration">
+                <span>✦</span>
+                <span>❋</span>
+                <span>✦</span>
+            </div>
+
+        </div>
+
+        <!-- Light that shines through the centre when the curtain splits -->
+        <div class="splash-seam-glow"></div>
+
+        <!-- LEFT HALF OF THE PICTURE -->
+        <div class="splash-half splash-left">
+            <div class="splash-art"></div>
+        </div>
+
+        <!-- RIGHT HALF OF THE PICTURE -->
+        <div class="splash-half splash-right">
+            <div class="splash-art"></div>
+        </div>
+
+        <div class="splash-sweep"></div>
+
+        <!-- Decorative lights are created with JavaScript -->
+        <div
+            id="introLights"
+            class="intro-lights"
+            aria-hidden="true"
+        ></div>
+
+        <canvas
+            id="introSparkles"
+            class="splash-sparkles"
+            aria-hidden="true"
+        ></canvas>
+
+        <!-- OPEN BUTTON -->
+        <div class="splash-open">
+
+            <button
+                id="openInvitation"
+                class="splash-seal"
+                type="button"
+                aria-label="Tap to open the invitation"
+            >
+                <span class="splash-ring"></span>
+                <span class="splash-ring splash-ring-two"></span>
+                <span class="splash-seal-text">Tap To<br>Open</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- MAIN INVITATION WEBSITE -->
+    <!-- ========================================= -->
+
+    <main id="invitationPage" class="invitation-page">
+
+        <!-- MAIN BACKGROUND DECORATION -->
+
+        <div class="page-background"></div>
+
+        <div class="page-decoration page-decoration-left"></div>
+
+        <div class="page-decoration page-decoration-right"></div>
+
+
+        <!-- ===================================== -->
+        <!-- NAVIGATION -->
+        <!-- ===================================== -->
+
+        <header class="site-header">
+
+            <div class="header-logo">
+                A <span>&</span> L
+            </div>
+
+            <nav class="main-navigation">
+
+                <a href="#home">Home</a>
+
+                <a href="#invitation">Invitation</a>
+
+                <a href="#countdown">Countdown</a>
+
+                <a href="#gallery">Gallery</a>
+
+                <a href="#venue">Venue</a>
+
+                <a href="#rsvp">RSVP</a>
+
+            </nav>
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </header>
+
+
+        <!-- ===================================== -->
+        <!-- HOME / HERO SECTION -->
+        <!-- ===================================== -->
+
+        <section id="home" class="hero-section">
+
+            <div class="hero-background-image"></div>
+
+            <div class="hero-image-overlay"></div>
+
+            <div class="hero-floating-petals" id="heroPetals"></div>
+
+            <div class="hero-content reveal">
+
+                <p class="hero-bismillah">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </p>
+
+                <div class="gold-divider">
+                    <span></span>
+                    ✦
+                    <span></span>
+                </div>
+
+                <p class="hero-subtitle">
+                    THE WEDDING CELEBRATION OF
+                </p>
+
+                <h1 class="hero-title">
+                    Ali
+                    <span> & </span>
+                    Hoorain
+                </h1>
+
+                <p class="hero-description">
+                    Two hearts, one beautiful journey,
+                    and a lifetime of love.
+                </p>
+
+                <div class="hero-date">
+
+                    <span>01</span>
+
+                    <div>
+                        <small>JANUARY</small>
+                        <strong>2027</strong>
+                    </div>
+
+                </div>
+
+                <a href="#invitation" class="gold-button">
+                    EXPLORE INVITATION
+                </a>
+
+            </div>
+
+            <div class="hero-bottom-decoration">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-line"></div>
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- INVITATION SECTION -->
+        <!-- ===================================== -->
+
+        <section id="invitation" class="invitation-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-overline">
+                        WITH GREAT PLEASURE
+                    </p>
+
+                    <h2>
+                        Wedding Invitation
+                    </h2>
+
+                    <div class="gold-divider">
+                        <span></span>
+                        ✦
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <div class="invitation-card reveal">
+
+                    <div class="invitation-card-top">
+                        <span>❋</span>
+                        <span>✦</span>
+                        <span>❋</span>
+                    </div>
+
+                    <p class="invitation-bismillah">
+                        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                    </p>
+
+                    <p class="invitation-host">
+                        ASLAM & FAMILY
+                    </p>
+
+                    <p class="invitation-message">
+                        Request the honour of your presence
+                        and blessings at the wedding ceremony
+                        of their beloved son
+                    </p>
+
+                    <h2 class="invitation-groom">
+                        Ali
+                    </h2>
+
+                    <p class="invitation-weds">
+                        with
+                    </p>
+
+                    <h2 class="invitation-bride">
+                        Hoorain
+                    </h2>
+
+                    <p class="invitation-message invitation-message-bottom">
+                        Your presence will make our celebration
+                        even more special and memorable.
+                    </p>
+
+                    <div class="invitation-card-bottom">
+                        <span>✦</span>
+                        <span>❋</span>
+                        <span>✦</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- DUA SECTION -->
+        <!-- ===================================== -->
+
+        <section class="dua-section">
+
+            <div class="dua-background"></div>
+
+            <div class="dua-content reveal">
+
+                <p class="dua-arabic">
+                    بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا
+                    وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+                </p>
+
+                <div class="gold-divider">
+                    <span></span>
+                    ✦
+                    <span></span>
+                </div>
+
+                <p class="dua-translation">
+                    May Allah bless you both, shower His blessings
+                    upon you, and unite you in goodness.
+                </p>
+
+                <p class="dua-reference">
+                    A BEAUTIFUL PRAYER FOR THE NEW COUPLE
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- COUNTDOWN SECTION -->
+        <!-- ===================================== -->
+
+        <section id="countdown" class="countdown-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-overline">
+                        THE BIG DAY IS COMING
+                    </p>
+
+                    <h2>
+                        Counting Every Moment
+                    </h2>
+
+                    <div class="gold-divider">
+                        <span></span>
+                        ✦
+                        <span></span>
+                    </div>
+
+                    <p class="section-description">
+                        We cannot wait to celebrate this beautiful
+                        beginning with you.
+                    </p>
+
+                </div>
+
+                <div class="countdown-container reveal">
+
+                    <div class="countdown-box">
+
+                        <strong id="days">00</strong>
+
+                        <span>DAYS</span>
+
+                    </div>
+
+                    <div class="countdown-separator">
+                        :
+                    </div>
+
+                    <div class="countdown-box">
+
+                        <strong id="hours">00</strong>
+
+                        <span>HOURS</span>
+
+                    </div>
+
+                    <div class="countdown-separator">
+                        :
+                    </div>
+
+                    <div class="countdown-box">
+
+                        <strong id="minutes">00</strong>
+
+                        <span>MINUTES</span>
+
+                    </div>
+
+                    <div class="countdown-separator">
+                        :
+                    </div>
+
+                    <div class="countdown-box">
+
+                        <strong id="seconds">00</strong>
+
+                        <span>SECONDS</span>
+
+                    </div>
+
+                </div>
+
+                <p id="countdownMessage" class="countdown-message">
+                    A new chapter begins on 1 January 2027.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- COUPLE SECTION -->
+        <!-- ===================================== -->
+
+        <section class="couple-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-overline">
+                        MADE FOR EACH OTHER
+                    </p>
+
+                    <h2>
+                        The Beautiful Couple
+                    </h2>
+
+                    <div class="gold-divider">
+                        <span></span>
+                        ✦
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <div class="couple-grid">
+
+                    <article class="couple-card reveal">
+
+                        <div class="couple-image-wrap">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
+                                alt="Portrait representing the bride"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <p class="couple-role">
+                            THE BRIDE
+                        </p>
+
+                        <h3>
+                            Hoorain
+                        </h3>
+
+                        <p class="couple-caption">
+                            A beautiful soul and a heart full of grace.
+                        </p>
+
+                    </article>
+
+                    <div class="couple-heart reveal">
+                        <span>♥</span>
+                    </div>
+
+                    <article class="couple-card reveal">
+
+                        <div class="couple-image-wrap">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85"
+                                alt="Portrait representing the groom"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <p class="couple-role">
+                            THE GROOM
+                        </p>
+
+                        <h3>
+                            Ali
+                        </h3>
+
+                        <p class="couple-caption">
+                            A kind heart ready for a lifetime of love.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- GALLERY SECTION -->
+        <!-- ===================================== -->
+
+        <section id="gallery" class="gallery-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-overline">
+                        BEAUTIFUL MOMENTS
+                    </p>
+
+                    <h2>
+                        Our Gallery
+                    </h2>
+
+                    <div class="gold-divider">
+                        <span></span>
+                        ✦
+                        <span></span>
+                    </div>
+
+                    <p class="section-description">
+                        A collection of beautiful moments
+                        and memories.
+                    </p>
+
+                </div>
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-item gallery-large reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85"
+                            alt="Wedding ceremony decoration"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>Beautiful Beginnings</span>
+                        </div>
+
+                    </div>
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85"
+                            alt="Wedding celebration"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>Celebration</span>
+                        </div>
+
+                    </div>
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=85"
+                            alt="Wedding table decoration"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>Special Details</span>
+                        </div>
+
+                    </div>
+
+                    <div class="gallery-item reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1507504031003-b417219a0e2b?auto=format&fit=crop&w=900&q=85"
+                            alt="Romantic wedding lights"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>Golden Memories</span>
+                        </div>
+
+                    </div>
+
+                    <div class="gallery-item gallery-wide reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1200&q=85"
+                            alt="Wedding venue and flowers"
+                            loading="lazy"
+                        >
+
+                        <div class="gallery-overlay">
+                            <span>Forever Together</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- EVENT DETAILS -->
+        <!-- ===================================== -->
+
+        <section class="event-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-overline">
+                        SAVE THE DATE
+                    </p>
+
+                    <h2>
+                        Wedding Celebration
+                    </h2>
+
+                    <div class="gold-divider">
+                        <span></span>
+                        ✦
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <div class="event-card reveal">
+
+                    <div class="event-icon">
+                        ✦
+                    </div>
+
+                    <p class="event-label">
+                        THE WEDDING DAY
+                    </p>
+
+                    <h3>
+                        Friday
+                    </h3>
+
+                    <p class="event-date">
+                        01 January 2027
+                    </p>
+
+                    <div class="event-details-grid">
+
+                        <div class="event-detail">
+
+                            <span class="event-detail-icon">
+                                ◷
+                            </span>
+
+                            <p>
+                                TIME
+                            </p>
+
+                            <strong>
+                                07:00 PM
+                            </strong>
+
+                        </div>
+
+                        <div class="event-detail">
+
+                            <span class="event-detail-icon">
+                                ♡
+                            </span>
+
+                            <p>
+                                CELEBRATION
+                            </p>
+
+                            <strong>
+                                Wedding
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- VENUE SECTION -->
+        <!-- ===================================== -->
+
+        <section id="venue" class="venue-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <p class="section-overline">
+                        WE WOULD LOVE TO SEE YOU
+                    </p>
+
+                    <h2>
+                        Wedding Venue
+                    </h2>
+
+                    <div class="gold-divider">
+                        <span></span>
+                        ✦
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <div class="venue-card reveal">
+
+                    <div class="venue-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=85"
+                            alt="Wedding venue"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="venue-information">
+
+                        <p class="venue-overline">
+                            JOIN US AT
+                        </p>
+
+                        <h3>
+                            The Grand Wedding Hall
+                        </h3>
+
+                        <p class="venue-address">
+                            Your Venue Address Here,
+                            Karachi, Pakistan.
+                        </p>
+
+                        <p class="venue-time">
+                            Friday, 01 January 2027
+                            <br>
+                            07:00 PM onwards
+                        </p>
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Karachi+Pakistan"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="gold-button"
+                        >
+                            GET DIRECTIONS
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- RSVP SECTION -->
+        <!-- ===================================== -->
+
+        <section id="rsvp" class="rsvp-section">
+
+            <div class="rsvp-background"></div>
+
+            <div class="section-container">
+
+                <div class="rsvp-content reveal">
+
+                    <p class="section-overline">
+                        KINDLY RESPOND
+                    </p>
+
+                    <h2>
+                        Will You Join Us?
+                    </h2>
+
+                    <div class="gold-divider">
+                        <span></span>
+                        ✦
+                        <span></span>
+                    </div>
+
+                    <p class="rsvp-description">
+                        Your presence is the greatest gift.
+                        Please let us know if you can join
+                        our special day.
+                    </p>
+
+                    <form id="rsvpForm" class="rsvp-form">
+
+                        <div class="form-group">
+
+                            <label for="guestName">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="guestName"
+                                name="guestName"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="guestCount">
+                                Number of Guests
+                            </label>
+
+                            <select
+                                id="guestCount"
+                                name="guestCount"
+                                required
+                            >
+
+                                <option value="">
+                                    Select guests
+                                </option>
+
+                                <option value="1">
+                                    1 Guest
+                                </option>
+
+                                <option value="2">
+                                    2 Guests
+                                </option>
+
+                                <option value="3">
+                                    3 Guests
+                                </option>
+
+                                <option value="4">
+                                    4 Guests
+                                </option>
+
+                                <option value="5">
+                                    5 Guests
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="attendance">
+                                Will You Attend?
+                            </label>
+
+                            <select
+                                id="attendance"
+                                name="attendance"
+                                required
+                            >
+
+                                <option value="">
+                                    Select your response
+                                </option>
+
+                                <option value="Yes, I will attend">
+                                    Yes, I will attend
+                                </option>
+
+                                <option value="Sorry, I cannot attend">
+                                    Sorry, I cannot attend
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="guestMessage">
+                                Personal Message
+                            </label>
+
+                            <textarea
+                                id="guestMessage"
+                                name="guestMessage"
+                                rows="4"
+                                placeholder="Write a message (optional)"
+                            ></textarea>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="gold-button rsvp-submit"
+                        >
+                            SEND RSVP
+                        </button>
+
+                        <p
+                            id="rsvpStatus"
+                            class="rsvp-status"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- THANK YOU SECTION -->
+        <!-- ===================================== -->
+
+        <section class="thank-you-section">
+
+            <div class="thank-you-content reveal">
+
+                <p class="thank-you-small">
+                    WITH LOVE AND GRATITUDE
+                </p>
+
+                <h2>
+                    Thank You
+                </h2>
+
+                <p>
+                    We look forward to celebrating
+                    this special day with you.
+                </p>
+
+                <div class="gold-divider">
+                    <span></span>
+                    ✦
+                    <span></span>
+                </div>
+
+                <p class="thank-you-couple">
+                    Ali <span>&</span> Hoorain
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- FOOTER -->
+        <!-- ===================================== -->
+
+        <footer class="site-footer">
+
+            <div class="footer-decoration">
+                ✦ ❋ ✦
+            </div>
+
+            <p class="footer-couple">
+                Ali & Hoorain
+            </p>
+
+            <p class="footer-date">
+                01 JANUARY 2027
+            </p>
+
+            <p class="footer-message">
+                Made with love for a beautiful beginning.
+            </p>
+
+            <p class="footer-copyright">
+                © 2027 Wedding Invitation
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- SCROLL LIGHT EFFECT -->
+    <!-- ========================================= -->
+
+    <div
+        id="scrollLights"
+        class="scroll-lights"
+        aria-hidden="true"
+    >
+
+        <div class="scroll-light scroll-light-left"></div>
+
+        <div class="scroll-light scroll-light-right"></div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- SCROLL DOWN INDICATOR -->
+    <!-- ========================================= -->
+
+    <div id="scrollGuide" class="scroll-guide">
+
+        <span>
+            KEEP SCROLLING
+        </span>
+
+        <div class="scroll-guide-arrow">
+            ↓
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- BACK TO TOP BUTTON -->
+    <!-- ========================================= -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html> 
