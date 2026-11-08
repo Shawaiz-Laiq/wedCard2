@@ -1836,7 +1836,7 @@ section {
 /* =========================================================
    23. SCROLL LIGHTS
 ========================================================= */
-
+/* 
 .scroll-lights {
     position: fixed;
     inset: 0;
@@ -1901,13 +1901,255 @@ section {
         opacity: 0;
     }
 }
+ */
 
+/* =====================================
+   LUXURY SCROLL LIGHTS
+===================================== */
 
+.scroll-lights {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.scroll-lights.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* GOLDEN LIGHT BEAM */
+
+.scroll-light {
+    position: absolute;
+    top: 0;
+    width: 3px;
+    height: 155px;
+
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(255, 222, 165, 0.15) 15%,
+        rgba(255, 224, 164, 0.95) 55%,
+        rgba(255, 255, 230, 1) 70%,
+        rgba(255, 194, 94, 0.4) 90%,
+        transparent 100%
+    );
+
+    box-shadow:
+        0 0 8px rgba(255, 208, 130, 0.9),
+        0 0 18px rgba(255, 184, 82, 0.65),
+        0 0 35px rgba(255, 174, 66, 0.35);
+
+    opacity: 0;
+
+    transform: translateY(-180px);
+
+    border-radius: 50%;
+}
+
+/* LEFT LIGHT */
+
+.scroll-light-left {
+    left: 25px;
+}
+
+/* RIGHT LIGHT */
+
+.scroll-light-right {
+    right: 25px;
+}
+
+/* LIGHT ANIMATION */
+
+.scroll-lights.visible .scroll-light-left {
+    animation: edgeLightDown 2.5s ease-in infinite;
+}
+
+.scroll-lights.visible .scroll-light-right {
+    animation: edgeLightDown 2.5s 0.9s ease-in infinite;
+}
+
+/* EXTRA GLOW AROUND LIGHT */
+
+.scroll-light::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 15px;
+    height: 55px;
+
+    background: rgba(255, 208, 130, 0.35);
+    filter: blur(12px);
+    border-radius: 50%;
+}
+
+/* BRIGHT LIGHT SPARK */
+
+.scroll-light::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 7px;
+    height: 7px;
+
+    background: #fff4d2;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 18px #ffd58a,
+        0 0 30px #ffc46b;
+}
+
+/* MOVEMENT */
+
+@keyframes edgeLightDown {
+
+    0% {
+        transform: translateY(-180px);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 0.9;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(calc(100vh + 180px));
+        opacity: 0;
+    }
+}
+
+/* =====================================
+   SCROLL DOWN INDICATOR
+===================================== */
+
+/* .scroll-lights::after {
+    content: "SCROLL DOWN  ↓";
+
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #f7dfae;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 8px rgba(255, 211, 145, 0.9),
+        0 0 18px rgba(255, 190, 105, 0.5);
+
+    white-space: nowrap;
+
+    animation: scrollTextGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollTextGlow {
+
+    0%, 100% {
+        opacity: 0.45;
+        margin-bottom: 0;
+    }
+
+    50% {
+        opacity: 1;
+        margin-bottom: 9px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .scroll-light-left {
+        left: 10px;
+    }
+
+    .scroll-light-right {
+        right: 10px;
+    }
+
+    .scroll-light {
+        height: 120px;
+    }
+
+    .scroll-lights::after {
+        bottom: 22px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+} */
+/* TEXT MOVES WITH BOTH GOLDEN LIGHTS */
+
+.scroll-light {
+    position: absolute;
+    top: 0;
+    width: 3px;
+    height: 155px;
+}
+
+.scroll-light-text {
+    position: absolute;
+    top: 155px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 125px;
+    text-align: center;
+
+    color: #ffe5b2;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #ffd27e,
+        0 0 22px #ffb84d;
+
+    animation: textGlow 1.3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
 /* =========================================================
    24. SCROLL GUIDE
 ========================================================= */
 
-.scroll-guide {
+/* .scroll-guide {
     position: fixed;
     right: 50%;
     bottom: 20px;
@@ -1935,6 +2177,78 @@ section {
 .scroll-guide-arrow {
     font-size: 22px;
     animation: arrowBounce 1.4s infinite;
+} */
+
+
+/* LUXURY SCROLL GUIDE */
+
+.scroll-guide {
+    position: fixed;
+    right: 50%;
+    bottom: 20px;
+    z-index: 90;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    color: #f6d58f;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateX(50%) translateY(10px);
+    transition: all 0.5s ease;
+
+    /* BLACK SHADE + GOLDEN GLOW */
+    text-shadow:
+        1px 2px 3px rgba(0, 0, 0, 1),
+        -1px -1px 2px rgba(0, 0, 0, 0.9),
+        0 0 5px #000,
+        0 0 9px rgba(255, 204, 112, 0.9),
+        0 0 18px rgba(255, 185, 75, 0.7);
+
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.8));
+}
+
+.scroll-guide.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(50%) translateY(0);
+}
+
+/* GOLDEN ARROW */
+
+.scroll-guide-arrow {
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffe0a0;
+
+    text-shadow:
+        0 2px 3px #000,
+        0 0 5px #000,
+        0 0 10px #ffd27e,
+        0 0 20px #ffb84d,
+        0 0 30px rgba(255, 190, 90, 0.8);
+
+    animation: arrowBounce 1.4s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translateY(9px);
+        opacity: 1;
+    }
 }
 
 
@@ -2673,7 +2987,7 @@ html {
 .splash-open {
     position: absolute;
     left: 50%;
-    top: 73%;
+    top: 60%;
     z-index: 10;
     transform: translate(-50%, -50%);
     animation: splashSealIn 1.4s 1s ease both;
